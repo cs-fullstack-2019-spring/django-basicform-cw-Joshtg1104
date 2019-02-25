@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="{% url 'helloMate' %}" method="post">
+    {% csrf_token %}
+    <h4>Account Holders</h4>
+    {% for eachAccount in accounts %}
+    <p>{{ eachAccount.name }} has {{eachAccount.checking}} in Checking and {{eachAccount.savings}} in Savings <a href="{% url 'add5Dollars' %}">Add $5</a></p>
+    {% endfor %}
+
+    <input type="text" name="personName">
+    <button>Submit</button>
+</form>
+
+</body>
+</html>
+
+<!--NEED TO PUSH!!!-->
